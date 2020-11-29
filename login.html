@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- setup bootstrap4 framework -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+  div.a {
+    width:500px;
+    margin:50px;
+    padding:50px;
+    border: 5px solid black;
+  }
+
+</style>
+<body>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <!-- Create Web Title -->
+  <h1>Welcome!</h1>
+  </div>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <!-- Create Navigation Bar -->
+  <a class="navbar-brand" href="Home.html">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- create Home button object -->
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="Login.html">Login</a>
+        <!-- create Login Link in navigation bar -->
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="contact.html">Contact</a>
+        <!-- create Contact Link in navigation bar -->
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link disabled" href="about.html">About</a>
+        <!-- create About Link in navigation bar -->
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class = a>
+<div class="container">
+  <!-- display web content-->
+  <h2>Login</h2>
+  <form class = "needs-validation" action = "http://localhost:8080" method = "post">
+    <!-- set input validation and allow form to send data to Fake endpoint -->
+    <div class="form-group">
+      <label for="UsenameLabel">Usename :</label>
+      <!-- Create Usename TextLabel -->
+      <input type="UsenameInput" class="form-control" id="UsenameInput1" placeholder="Enter usename" required>
+      <!-- Create Usename InputField -->
+
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <!-- Create Password TextLabel -->
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+      <!-- Create Password InputField -->
+    </div>
+    <button type="submit" class="btn btn-secondary">Submit</button>
+    <!-- Create Submit Button -->
+  </form>
+  <div class = "text-right" style = "margin-top:-38px">
+    <button type = "cancel" class="btn btn-secondary" onclick="goBack()">Cancel</button>
+    <!-- Create Cancel Button -->
+      <script>
+        function goBack() {
+          /**
+         * Back to previous page
+         *
+         */
+          window.history.back();
+        }
+      </script>
+  </div>
+  </div>
+</div>
+<body/>
+<script>
+fetch('/', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        user: {
+            name: "John",
+            email: "john@example.com"
+        }
+    })
+});
+</script>
+</html>
